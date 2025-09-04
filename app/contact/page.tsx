@@ -7,7 +7,7 @@ export default function ContactPage() {
     <main className="section container justify-center max-w-5xl items-start w-full px-4 py-8 grid md:grid-cols-2 gap-10">
       <div>
         <h1 className="section-title">Contact Us</h1>
-        <p className="section-sub">We'd love to hear from you.</p>
+        <p className="section-sub">We"d love to hear from you.</p>
         <ul className="mt-6 text-sm space-y-2">
           <li>
             <strong>Address:</strong> {company.address}

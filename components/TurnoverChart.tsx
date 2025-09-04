@@ -10,7 +10,7 @@ return (
 <CartesianGrid strokeDasharray="3 3" />
 <XAxis dataKey="year" />
 <YAxis tickFormatter={(v) => `₹${(v/1_00_000).toFixed(0)}L`} />
-<Tooltip formatter={(value: any) => [`₹${Number(value).toLocaleString("en-IN")}`, "Turnover"]} />
+<Tooltip formatter={(value: number | string) => [`₹${Number(value).toLocaleString("en-IN")}`, "Turnover"]} />
 <Bar dataKey="amount" radius={[6,6,0,0]} />
 </BarChart>
 </ResponsiveContainer>
