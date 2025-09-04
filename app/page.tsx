@@ -1,15 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ProjectCard from "@/components/ProjectCard";
-import TurnoverChart from "@/components/TurnoverChart";
-import WorkforceChart from "@/components/WorkforceChart";
-import { company, projects, turnover, workforce } from "@/lib/data";
-import { formatINR } from "@/lib/utils";
+import { company } from "@/lib/data";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+
       {/* Hero Section */}
       <section className="section justify-center items-start w-full px-4 py-8 bg-gradient-to-b from-white to-blue-50 border-b border-gray-200">
         <div className="container grid md:grid-cols-2 items-center gap-10">
@@ -22,9 +19,11 @@ export default function Home() {
               shuttering, reinforcement, and concreting work for
               high-rise and super high-rise projects across Mumbai.
             </p>
+            <p>We&apos;re happy to help you!</p>
           </div>
         </div>
       </section>
+
       <Footer />
     </>
   );
