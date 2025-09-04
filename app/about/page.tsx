@@ -16,9 +16,9 @@ export default function AboutPage() {
         </p>
         <ul className="mt-6 grid gap-3 text-sm list-disc pl-5">
           <li>
-            <strong>Head Office:</strong> Office No-01, Matrukripa CHSL, Baburao
-            Parulekar Marg, Near Shaitan Chauki Police Station, Dadar (W),
-            Mumbai-400028
+            <strong>Head Office:</strong> Office No.103, Nana Niwas, 1st Floor, 
+            Desai Hospital, Baburao Parulekar Road, Near Shaitan Chowki 
+            Dadar Police Station, Dadar West, Mumbai -400 028.
           </li>
           <li>
             <strong>Workforce:</strong> 1183+ motivated skilled and unskilled
