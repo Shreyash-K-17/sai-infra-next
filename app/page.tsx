@@ -8,8 +8,8 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="section justify-center items-start w-full px-4 py-8 bg-gradient-to-b from-white to-blue-50 border-b border-gray-200">
-        <div className="container grid md:grid-cols-2 items-center gap-10">
+      <main className="section justify-center items-start w-full place-items-center px-4 py-8 mb-0 bg-gradient-to-b from-white to-blue-50 border-b border-gray-200">
+        <div className="container grid md:grid-cols-2 pb-70 items-center justify-center gap-10">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
               High-Rise Construction Excellence
@@ -22,9 +22,10 @@ export default function Home() {
             <p>We&apos;re happy to help you!</p>
           </div>
         </div>
-      </section>
+      </main>
 
-      <Footer />
+      <Footer compact/>
+        
     </>
   );
 }

@@ -20,11 +20,13 @@ export default function FinancialsPage() {
                     {turnover.map((t) => (
                         <li
                             key={t.year}
-                            className="flex items-center justify-between card p-3"
+                            className="flex flex-col sm:flex-row sm:items-center justify-between bg-white rounded-lg p-3 
+             transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                         >
-                            <span>{t.year}</span>
-                            <b>{formatINR(t.amount)}</b>
+                            <span className="text-sm text-gray-600 sm:w-1/4 mb-1 sm:mb-0">{t.year}</span>
+                            <b className="text-base sm:text-lg font-semibold text-gray-900">{formatINR(t.amount)}</b>
                         </li>
+
                     ))}
                 </ul>
             </main>

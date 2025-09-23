@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer"; 
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="section container mx-auto flex flex-col justify-center items-start w-full px-4 py-8 max-w-5xl">
+      <main className="section container mx-auto mb-55 flex flex-col justify-center items-start w-full px-4 py-8 max-w-5xl">
         <h1 className="section-title text-3xl font-bold mb-4">About Sai Infra Group</h1>
         <p className="section-sub text-gray-700">
           Sai Infra Construction Company, established in 2018, is headquartered at
@@ -16,8 +16,8 @@ export default function AboutPage() {
         </p>
         <ul className="mt-6 grid gap-3 text-sm list-disc pl-5">
           <li>
-            <strong>Head Office:</strong> Office No.103, Nana Niwas, 1st Floor, 
-            Desai Hospital, Baburao Parulekar Road, Near Shaitan Chowki 
+            <strong>Head Office:</strong> Office No.103, Nana Niwas, 1st Floor,
+            Desai Hospital, Baburao Parulekar Road, Near Shaitan Chowki
             Dadar Police Station, Dadar West, Mumbai -400 028.
           </li>
           <li>

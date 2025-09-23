@@ -16,20 +16,21 @@ export default function ProjectsPage() {
     return (
         <>
             <Navbar />
-            <main className="section container justify-center items-start w-full px-4 py-8">
-                <h1 className="section-title">Our Projects</h1>
-                <p className="section-sub">
-                    From landmark skyscrapers to institutional buildings, Sai Infra has
-                    contributed to some of Mumbai&apos;s most ambitious construction projects.
-                </p>
-
-                <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projects.map((p) => (
-                        <ProjectCard key={p.name} p={p} />
-                    ))}
-                </div>
-            </main>
-            <Footer />
+            <div className="flex justify-center items-center min-h-screen w-full bg-gradient-to-b from-blue-10 to-blue-50 border-b">
+                <main className="section container flex flex-col items-center w-full max-w-8xl">
+                    <h1 className="section-title">Our Projects</h1>
+                    <p className="section-sub text-center">
+                        From landmark skyscrapers to institutional buildings, Sai Infra has
+                        contributed to some of Mumbai&apos;s most ambitious construction projects.
+                    </p>
+                    <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {projects.map((p) => (
+                            <ProjectCard key={p.name} p={p} />
+                        ))}
+                    </div>
+                </main>
+            </div>
+            <Footer compact />
         </>
     );
 }
