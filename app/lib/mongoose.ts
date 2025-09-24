@@ -1,23 +1,31 @@
 import mongoose from "mongoose";
 
-// Ensure MONGO_URI exists
-const MONGO_URI_RAW = process.env.MONGO_URI;
-if (!MONGO_URI_RAW) throw new Error("Please define MONGO_URI in .env");
+const MONGODB_URI = process.env.MONGO_URI;
 
-// TypeScript now knows MONGO_URI is a string
-const MONGO_URI: string = MONGO_URI_RAW;
+if (!MONGODB_URI) {
+  throw new Error("Please define the MONGO_URI environment variable inside .env.local");
+}
 
-// Type-safe cached connection
-let cached: { conn: mongoose.Mongoose | null; promise: Promise<mongoose.Mongoose> | null } =
-  (global as any).mongoose || { conn: null, promise: null };
+const cached = (global as any).mongoose;
 
-export async function connectToDatabase(): Promise<mongoose.Mongoose> {
-  if (cached.conn) return cached.conn;
+if (!cached) {
+  (global as any).mongoose = { conn: null, promise: null };
+}
 
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGO_URI).then((mongoose) => mongoose);
+export async function connectToDatabase() {
+  if (cached.conn) {
+    return cached.conn;
   }
 
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
+      return mongoose;
+    });
+  }
   cached.conn = await cached.promise;
   return cached.conn;
 }

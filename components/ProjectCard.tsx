@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import Image from 'next/image';
 
 type Project = {
     name: string;
@@ -11,23 +11,23 @@ type Project = {
 };
 
 export default function ProjectCard({ p }: { p: Project }) {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
         <article
             className="card p-3 sm:p-5 relative overflow-hidden w-full max-w-xs sm:max-w-md mx-auto flex flex-col justify-center items-center 
-             h-48 sm:h-64 md:h-72 lg:h-80 transform transition duration-300 hover:scale-105 hover:shadow-xl"
+            h-48 sm:h-64 md:h-72 lg:h-80 transform transition duration-300 hover:scale-105 hover:shadow-xl"
         >
-            {/* Image as background */}
             {p.imageUrl && (
-                <img
-                    src={p.imageUrl}
-                    alt={`Image of ${p.name}`}
-                    className="absolute inset-0 w-full h-full object-cover opacity-70 z-0"
-                />
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src={p.imageUrl}
+                        alt={`Image of ${p.name}`}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="opacity-70"
+                    />
+                </div>
             )}
 
-            {/* Text with semi-transparent background */}
             <div className="relative z-10 bg-black/30 p-2 sm:p-3 md:p-4 rounded w-full text-center">
                 <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-white">{p.name}</h3>
                 {p.location && (
@@ -41,9 +41,5 @@ export default function ProjectCard({ p }: { p: Project }) {
                 )}
             </div>
         </article>
-
-
-
-
     );
 }
