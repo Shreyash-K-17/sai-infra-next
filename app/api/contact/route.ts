@@ -60,6 +60,7 @@
 
 // app/api/contact/route.ts
 import { MongoClient } from "mongodb";
+import { NextResponse } from 'next/server';
 
 const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) throw new Error("Please define MONGO_URI in .env");
@@ -89,10 +90,10 @@ export async function POST(req: Request) {
     const { name, email, message } = body;
 
     if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: "All fields are required." }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      return NextResponse.json(
+        { error: "All fields are required." },
+        { status: 400 }
+      );
     }
 
     const client = await clientPromise;
@@ -101,15 +102,15 @@ export async function POST(req: Request) {
 
     const result = await collection.insertOne({ name, email, message, createdAt: new Date() });
 
-    return new Response(JSON.stringify({ success: true, id: result.insertedId }), {
-      status: 201,
-      headers: { "Content-Type": "application/json" },
-    });
+    return NextResponse.json(
+      { success: true, id: result.insertedId },
+      { status: 201 }
+    );
   } catch (err) {
     console.error(err);
-    return new Response(JSON.stringify({ error: "Failed to save message." }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return NextResponse.json(
+      { error: "Failed to save message." },
+      { status: 500 }
+    );
   }
 }
