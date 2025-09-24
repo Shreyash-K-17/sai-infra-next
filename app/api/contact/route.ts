@@ -57,76 +57,73 @@
 
 
 
-
-// app/api/contact/route.ts
-// app/api/contact/route.ts
 import { NextResponse } from "next/server";
 
 // --- Mocks to make this file runnable in a single context ---
 // In a real project, these would be in separate files.
 const mongoose = {
-  connection: {
-    readyState: 1, // 1 is connected
-  },
-  connect: (uri: string) => Promise.resolve(),
+  connection: {
+    readyState: 1, // 1 is connected
+  },
+  connect: () => Promise.resolve(),
 };
 const connectToDatabase = async () => {
-  if (mongoose.connection.readyState >= 1) {
-    console.log("Using existing database connection");
-    return;
-  }
-  await mongoose.connect(process.env.MONGO_URI || "");
-  console.log("New database connection established");
+  if (mongoose.connection.readyState >= 1) {
+    console.log("Using existing database connection");
+    return;
+  }
+  await mongoose.connect();
+  console.log("New database connection established");
 };
 
 class Contact {
-  name: string;
-  email: string;
-  message: string;
-  _id: string;
+  name: string;
+  email: string;
+  message: string;
+  _id: string;
 
-  constructor(data: { name: string, email: string, message: string }) {
-    this.name = data.name;
-    this.email = data.email;
-    this.message = data.message;
-    this._id = `mock-id-${Date.now()}`;
-  }
+  constructor(data: { name: string, email: string, message: string }) {
+    this.name = data.name;
+    this.email = data.email;
+    this.message = data.message;
+    this._id = `mock-id-${Date.now()}`;
+  }
 
-  save() {
-    console.log("Mock save successful", this);
-    return Promise.resolve(this);
-  }
+  save() {
+    console.log("Mock save successful", this);
+    return Promise.resolve(this);
+  }
 }
 // --- End of mocks ---
 
 export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    const { name, email, message } = body;
+  try {
+    const body = await req.json();
+    const { name, email, message } = body;
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: "All fields are required." },
-        { status: 400 }
-      );
-    }
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: "All fields are required." },
+        { status: 400 }
+      );
+    }
 
-    // Connect to MongoDB
-    await connectToDatabase();
+    // Connect to MongoDB
+    await connectToDatabase();
 
-    // Create and save new contact
-    const contact = new Contact({ name, email, message });
-    await contact.save();
+    // Create and save new contact
+    const contact = new Contact({ name, email, message });
+    await contact.save();
 
-    return NextResponse.json(
-      { success: true, id: contact._id },
-      { status: 201 }
-    );
-  } catch (err) {
-    console.error("MongoDB error:", err);
-    return NextResponse.json(
-      { error: "Failed to save message." },
-      { status: 500 }
-    );
-  }
+    return NextResponse.json(
+      { success: true, id: contact._id },
+      { status: 201 }
+    );
+  } catch (err) {
+    console.error("MongoDB error:", err);
+    return NextResponse.json(
+      { error: "Failed to save message." },
+      { status: 500 }
+    );
+  }
 }
