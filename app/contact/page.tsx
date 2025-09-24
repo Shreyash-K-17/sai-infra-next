@@ -39,12 +39,35 @@ export default function ContactPage() {
 
           {/* Contact form */}
           <form
-            className="card p-6 grid gap-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Message sent! (demo only)");
-            }}
-          >
+  className="card p-6 grid gap-4"
+  onSubmit={async (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const name = (form[0] as HTMLInputElement).value;
+    const email = (form[1] as HTMLInputElement).value;
+    const message = (form[2] as HTMLTextAreaElement).value;
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("Message sent! Thank you for contacting us.");
+        form.reset();
+      } else {
+        alert(data.error || "Something went wrong.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to send message.");
+    }
+  }}
+>
+
             <div>
               <label className="block text-sm font-medium">Name</label>
               <input
