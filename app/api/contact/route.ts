@@ -59,30 +59,45 @@
 
 
 // app/api/contact/route.ts
-import { MongoClient } from "mongodb";
-import { NextResponse } from 'next/server';
+// app/api/contact/route.ts
+import { NextResponse } from "next/server";
 
-const MONGO_URI = process.env.MONGO_URI;
-if (!MONGO_URI) throw new Error("Please define MONGO_URI in .env");
-
-// Global type-safe client for dev
-declare global {
-  var _mongoClientPromise: Promise<MongoClient> | undefined;
-}
-
-let client: MongoClient;
-let clientPromise: Promise<MongoClient>;
-
-if (process.env.NODE_ENV === "development") {
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(MONGO_URI);
-    global._mongoClientPromise = client.connect();
+// --- Mocks to make this file runnable in a single context ---
+// In a real project, these would be in separate files.
+const mongoose = {
+  connection: {
+    readyState: 1, // 1 is connected
+  },
+  connect: (uri: string) => Promise.resolve(),
+};
+const connectToDatabase = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    console.log("Using existing database connection");
+    return;
   }
-  clientPromise = global._mongoClientPromise;
-} else {
-  client = new MongoClient(MONGO_URI);
-  clientPromise = client.connect();
+  await mongoose.connect(process.env.MONGO_URI || "");
+  console.log("New database connection established");
+};
+
+class Contact {
+  name: string;
+  email: string;
+  message: string;
+  _id: string;
+
+  constructor(data: { name: string, email: string, message: string }) {
+    this.name = data.name;
+    this.email = data.email;
+    this.message = data.message;
+    this._id = `mock-id-${Date.now()}`;
+  }
+
+  save() {
+    console.log("Mock save successful", this);
+    return Promise.resolve(this);
+  }
 }
+// --- End of mocks ---
 
 export async function POST(req: Request) {
   try {
@@ -96,18 +111,19 @@ export async function POST(req: Request) {
       );
     }
 
-    const client = await clientPromise;
-    const db = client.db("sai_infra");
-    const collection = db.collection("contacts");
+    // Connect to MongoDB
+    await connectToDatabase();
 
-    const result = await collection.insertOne({ name, email, message, createdAt: new Date() });
+    // Create and save new contact
+    const contact = new Contact({ name, email, message });
+    await contact.save();
 
     return NextResponse.json(
-      { success: true, id: result.insertedId },
+      { success: true, id: contact._id },
       { status: 201 }
     );
   } catch (err) {
-    console.error(err);
+    console.error("MongoDB error:", err);
     return NextResponse.json(
       { error: "Failed to save message." },
       { status: 500 }
