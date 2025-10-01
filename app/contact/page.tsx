@@ -46,7 +46,7 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen w-full flex flex-col justify-between items-center bg-gradient-to-b from-blue-50 to-blue-100 px-4">
+      <div className="min-h-screen w-full pt-10 pb-10 flex flex-col justify-between items-center bg-gradient-to-b from-blue-50 to-blue-100 px-4">
         <main className="section container max-w-5xl grid md:grid-cols-2 gap-10 items-start bg-white shadow-xl rounded-2xl p-8 my-auto">
 
           {/* Contact info */}
