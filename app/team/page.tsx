@@ -3,7 +3,7 @@ import { workforce } from "@/lib/data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function TeamPage() {
+export default function Team() {
   return (
     <>
       <Navbar />
@@ -12,7 +12,7 @@ export default function TeamPage() {
           <div>
             <div className="flex flex-col items-center text-center">
               <h1 className="section-title">Our Workforce</h1>
-              <p className="section-sub mt-2">
+              <p className="section-sub font-semibold mt-2">
                 A strong workforce is the backbone of Sai Infra. We are powered by
                 engineers, foremen, skilled tradesmen, and dedicated unskilled staff.
               </p>

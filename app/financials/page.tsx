@@ -4,13 +4,13 @@ import { formatINR } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function FinancialsPage() {
+export default function Financials() {
     return (
         <>
             <Navbar />
             <main className="section container justify-center w-full px-4 py-8 items-center">
                 <h1 className="section-title">Financial Performance</h1>
-                <p className="section-sub">
+                <p className="section-sub font-medium">
                     Steady growth reflected in our annual turnover over the past years.
                 </p>
                 <div className="mt-6 card p-6">
@@ -23,7 +23,7 @@ export default function FinancialsPage() {
                             className="flex flex-col sm:flex-row sm:items-center justify-between bg-white rounded-lg p-3 
              transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                         >
-                            <span className="text-sm text-gray-600 sm:w-1/4 mb-1 sm:mb-0">{t.year}</span>
+                            <span className="text-sm font-medium text-gray-600 sm:w-1/4 mb-1 sm:mb-0">{t.year}</span>
                             <b className="text-base sm:text-lg font-semibold text-gray-900">{formatINR(t.amount)}</b>
                         </li>
 

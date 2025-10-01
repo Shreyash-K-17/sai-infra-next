@@ -12,14 +12,14 @@ interface projects {
     // Add any other fields that exist in your project objects
 }
 
-export default function ProjectsPage() {
+export default function Projects() {
     return (
         <>
             <Navbar />
             <div className="flex justify-center items-center min-h-screen w-full bg-gradient-to-b from-blue-10 to-blue-50 border-b">
                 <main className="section container flex flex-col items-center w-full max-w-8xl">
                     <h1 className="section-title">Our Projects</h1>
-                    <p className="section-sub text-center">
+                    <p className="section-sub font-semibold text-center">
                         From landmark skyscrapers to institutional buildings, Sai Infra has
                         contributed to some of Mumbai&apos;s most ambitious construction projects.
                     </p>

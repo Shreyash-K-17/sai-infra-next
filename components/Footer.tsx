@@ -20,12 +20,12 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
                 <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-gray-900">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><Link href="/about" className="hover:text-gray-900 transition-colors duration-200">About</Link></li>
-                        <li><Link href="/projects" className="hover:text-gray-900 transition-colors duration-200">Projects</Link></li>
-                        <li><Link href="/team" className="hover:text-gray-900 transition-colors duration-200">Team</Link></li>
-                        <li><Link href="/equipment" className="hover:text-gray-900 transition-colors duration-200">Equipment</Link></li>
-                        <li><Link href="/financials" className="hover:text-gray-900 transition-colors duration-200">Financials</Link></li>
-                        <li><Link href="/contact" className="hover:text-gray-900 transition-colors duration-200">Contact</Link></li>
+                        <li><Link href="/about" className="hover:text-blue-600 transition-colors duration-200">About</Link></li>
+                        <li><Link href="/projects" className="hover:text-blue-600 transition-colors duration-200">Projects</Link></li>
+                        <li><Link href="/team" className="hover:text-blue-600 transition-colors duration-200">Team</Link></li>
+                        <li><Link href="/equipment" className="hover:text-blue-600 transition-colors duration-200">Equipment</Link></li>
+                        <li><Link href="/financials" className="hover:text-blue-600 transition-colors duration-200">Financials</Link></li>
+                        <li><Link href="/contact" className="hover:text-blue-600 transition-colors duration-200">Contact</Link></li>
                     </ul>
                 </div>
 
