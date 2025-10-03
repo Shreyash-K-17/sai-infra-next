@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { company } from "@/lib/data";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"public" | "private">("public");
@@ -130,39 +131,38 @@ export default function Home() {
           {/* Public Clients */}
           {activeTab === "public" && (
             <div className="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
-              <img src="https://capacite.in/wp-content/uploads/2024/06/client-logo-2.jpg" alt="MHADA" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/03.jpg" alt="CIDCO" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/10.jpg" alt="BSNL" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/client-logo-1.jpg" alt="NBCC" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/pwd.jpg" alt="PWD" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/bmc.jpg" alt="BMC" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/08.jpg" alt="Rail Vikas Nigam" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/06.jpg" alt="IOCL" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/07.jpg" alt="GIFT City" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/1.jpg" alt="ICT" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/jnpa.jpg" alt="JNPA" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/client-logo-1.jpg" alt="MMRDA" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/05/08.jpg" alt="NHSRCL" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/client-logo-2.jpg" alt="MHADA" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/03.jpg" alt="CIDCO" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/10.jpg" alt="BSNL" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/client-logo-1.jpg" alt="NBCC" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/pwd.jpg" alt="PWD" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/bmc.jpg" alt="BMC" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/08.jpg" alt="Rail Vikas Nigam" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/06.jpg" alt="IOCL" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/07.jpg" alt="GIFT City" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/1.jpg" alt="ICT" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/jnpa.jpg" alt="JNPA" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/client-logo-1.jpg" alt="MMRDA" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/05/08.jpg" alt="NHSRCL" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
             </div>
           )}
 
-          {/* Private Clients */}
           {activeTab === "private" && (
             <div className="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
-              <img src="https://capacite.in/wp-content/uploads/2025/09/Hinduja-Group-Logo.png" alt="Hinduja" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/12.jpg" alt="Oberoi" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/17.jpg" alt="Raymond" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/11.jpg" alt="Hiranandani" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/BRIGADE-GROUP17.png" alt="Brigade" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/signature.jpg" alt="Piramal" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/TATA-TRUST.png" alt="Tata Trust" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/shefi.jpg" alt="Transcon" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/16.jpg" alt="Rustomjee" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/13.jpg" alt="Brookfield" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2025/04/kalpataru.jpg" alt="Kalpataru" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/BROOKFIELD-1.png" alt="Emaar MGF" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/GIC-SINGAPORE.png" alt="Wadhwa" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
-              <img src="https://capacite.in/wp-content/uploads/2024/06/15.jpg" alt="Saifee Burhani Trust" className="h-24 mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/09/Hinduja-Group-Logo.png" alt="Hinduja" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/12.jpg" alt="Oberoi" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/17.jpg" alt="Raymond" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/11.jpg" alt="Hiranandani" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/BRIGADE-GROUP17.png" alt="Brigade" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/signature.jpg" alt="Piramal" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/TATA-TRUST.png" alt="Tata Trust" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/shefi.jpg" alt="Transcon" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/16.jpg" alt="Rustomjee" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/13.jpg" alt="Brookfield" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2025/04/kalpataru.jpg" alt="Kalpataru" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/BROOKFIELD-1.png" alt="Emaar MGF" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/GIC-SINGAPORE.png" alt="Wadhwa" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+              <Image src="https://capacite.in/wp-content/uploads/2024/06/15.jpg" alt="Saifee Burhani Trust" width={96} height={96} className="mx-auto transition-transform duration-300 hover:scale-110 hover:opacity-80" />
             </div>
           )}
         </div>
