@@ -44,8 +44,8 @@ export default function Home() {
               <Image
                 src="https://capacite.in/wp-content/uploads/2024/07/DSC_9270-scaled.jpg"
                 alt="Sai Infra Construction"
-                height={400}    
-                width={600}     
+                height={400}
+                width={600}
                 className="rounded-xl shadow-lg w-full max-w-sm md:max-w-md transition-transform duration-300 hover:scale-105"
               />
             </div>
