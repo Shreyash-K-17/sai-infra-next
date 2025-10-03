@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { company } from "@/lib/data";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -31,11 +32,16 @@ export default function About() {
                 </p>
               </div>
               <div className="flex justify-center">
-                <img
+                import Image from "next/image";
+
+                <Image
                   src="https://capacite.in/wp-content/uploads/2024/06/work-area-lg.jpg"
                   alt="Sai Infra Construction work area"
+                  width={600}   // use actual or appropriate width
+                  height={400}  // use actual or appropriate height
                   className="rounded-xl shadow-lg max-w-md w-full transition-transform duration-300 hover:scale-105"
                 />
+
               </div>
             </section>
 
@@ -43,31 +49,31 @@ export default function About() {
 
             {/* Mission & Vision */}
             <section className="text-center">
-  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-    Our Mission & Vision
-  </h2>
-  <p className="mt-4 text-lg font-medium text-gray-800 leading-relaxed max-w-3xl mx-auto">
-    We turn visions into reality — creating world-class spaces built to last, fostering trust and excellence in every relationship.
-  </p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                Our Mission & Vision
+              </h2>
+              <p className="mt-4 text-lg font-medium text-gray-800 leading-relaxed max-w-3xl mx-auto">
+                We turn visions into reality — creating world-class spaces built to last, fostering trust and excellence in every relationship.
+              </p>
 
-  {/* Added Sub-points */}
-  <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
-    <div className="p-8 bg-white rounded-xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
-      <h3 className="text-xl font-bold text-gray-900">Our Mission</h3>
-      <p className="mt-2 font-medium text-gray-700 leading-relaxed">
-        To deliver safe, sustainable, and high-quality construction services
-        while building long-term partnerships based on trust, integrity, and reliability.
-      </p>
-    </div>
-    <div className="p-8 bg-white rounded-xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
-      <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
-      <p className="mt-2 font-medium text-gray-700 leading-relaxed">
-        To be recognized as the most trusted construction partner in India,
-        transforming skylines and creating spaces that inspire future generations.
-      </p>
-    </div>
-  </div>
-</section>
+              {/* Added Sub-points */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+                <div className="p-8 bg-white rounded-xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-gray-900">Our Mission</h3>
+                  <p className="mt-2 font-medium text-gray-700 leading-relaxed">
+                    To deliver safe, sustainable, and high-quality construction services
+                    while building long-term partnerships based on trust, integrity, and reliability.
+                  </p>
+                </div>
+                <div className="p-8 bg-white rounded-xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
+                  <p className="mt-2 font-medium text-gray-700 leading-relaxed">
+                    To be recognized as the most trusted construction partner in India,
+                    transforming skylines and creating spaces that inspire future generations.
+                  </p>
+                </div>
+              </div>
+            </section>
 
 
             <div className="border-t border-gray-200"></div>
@@ -123,7 +129,7 @@ export default function About() {
 
 
 
-      <Footer compact/>
+      <Footer compact />
     </>
   );
 }
