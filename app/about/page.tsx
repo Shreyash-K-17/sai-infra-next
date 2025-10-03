@@ -32,8 +32,6 @@ export default function About() {
                 </p>
               </div>
               <div className="flex justify-center">
-                import Image from "next/image";
-
                 <Image
                   src="https://capacite.in/wp-content/uploads/2024/06/work-area-lg.jpg"
                   alt="Sai Infra Construction work area"
