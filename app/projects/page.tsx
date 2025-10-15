@@ -4,32 +4,47 @@ import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/data";
 
 // Define the Project type (if not already defined elsewhere)
-interface projects {
+interface Project {
     name: string;
+    slug: string;
     location: string;
     configuration: string;
     areaLakhSqft: number;
-    // Add any other fields that exist in your project objects
+    imageUrl?: string;
+    description?: string;
+    details?: string;
+    highlights?: {
+        title: string;
+        text: string;
+    }[];
 }
+
 
 export default function Projects() {
     return (
         <>
             <Navbar />
-            <div className="flex justify-center items-center min-h-screen w-full bg-gradient-to-b from-blue-10 to-blue-50 border-b">
-                <main className="section container flex flex-col items-center w-full max-w-8xl">
-                    <h1 className="section-title">Our Projects</h1>
-                    <p className="section-sub font-semibold text-center">
-                        From landmark skyscrapers to institutional buildings, Sai Infra has
-                        contributed to some of Mumbai&apos;s most ambitious construction projects.
-                    </p>
-                    <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section className="section px-4 py-16 bg-gradient-to-b from-blue-10 to-blue-50">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-12">
+                        <h1 className="section-title text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
+                            Our Projects
+                        </h1>
+                        <p className="section-sub font-semibold text-gray-700 mt-4 max-w-3xl mx-auto">
+                            From landmark skyscrapers to institutional buildings, Sai Infra
+                            has contributed to some of Mumbai&apos;s most ambitious construction projects.
+                        </p>
+                    </div>
+
+                    {/* ✅ Responsive grid */}
+                    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                         {projects.map((p) => (
-                            <ProjectCard key={p.name} p={p} />
+                            <ProjectCard key={p.slug} project={p} />
                         ))}
                     </div>
-                </main>
-            </div>
+                </div>
+            </section>
+
             <Footer compact />
         </>
     );
