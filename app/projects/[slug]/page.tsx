@@ -4,14 +4,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
-export default async function ProjectDetail({ params }: { params: { slug: string } }) {
-    const { slug } = await params; // ✅ wait for it
-    console.log("Looking for slug:", slug);
+interface ProjectDetailProps {
+  params: Promise<{ slug: string }>;
+}
 
-    const project = projects.find((p) => p.slug === slug);
-    console.log("Project found:", !!project);
+export default async function ProjectDetail({ params }: ProjectDetailProps) {
+  const { slug } = await params;
+  const project = projects.find(p => p.slug === slug);
 
-    if (!project) return notFound();
+  if (!project) return notFound();
 
     return (
         <>
