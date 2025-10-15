@@ -3,14 +3,6 @@
 import Image from 'next/image';
 import Link from "next/link";
 
-type Project = {
-    name: string;
-    location?: string;
-    configuration: string;
-    areaLakhSqft?: number;
-    imageUrl: string;
-};
-
 export default function ProjectCard({ project }: { project: any }) {
     return (
         <Link href={`/projects/${project.slug}`} className="group">
