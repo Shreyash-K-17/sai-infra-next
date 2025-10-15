@@ -3,22 +3,6 @@ import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/data";
 
-// Define the Project type (if not already defined elsewhere)
-interface Project {
-    name: string;
-    slug: string;
-    location: string;
-    configuration: string;
-    areaLakhSqft: number;
-    imageUrl?: string;
-    description?: string;
-    details?: string;
-    highlights?: {
-        title: string;
-        text: string;
-    }[];
-}
-
 
 export default function Projects() {
     return (
