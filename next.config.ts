@@ -89,6 +89,13 @@ const nextConfig = {
         protocol: "https",
         hostname: "pcfandtypecodewebstuff.s3.amazonaws.com",
       },
+      // { protocol: "https", hostname: "cdn.pixabay.com" },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "supplymeonline.com" },
+      { protocol: "https", hostname: "www.marshells.com" },
+      { protocol: "https", hostname: "m.media-amazon.com" },
+      { protocol: "https", hostname: "5.imimg.com" },
+
     ],
   },
 };

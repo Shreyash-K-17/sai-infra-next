@@ -296,15 +296,215 @@ export const projects = [
 
 ];
 
+// export const workforce = [
+//   { role: "Engineers", count: 8 },
+//   { role: "Formwork-Carpenter", count: 300 },
+//   { role: "Foremen", count: 25 },
+//   { role: "Carpenter", count: 280 },
+//   { role: "Rigger", count: 50 },
+//   { role: "Fitter", count: 220 },
+//   { role: "Unskilled", count: 300 },
+// ];
+
 export const workforce = [
-  { role: "Engineers", count: 8 },
-  { role: "Formwork-Carpenter", count: 300 },
-  { role: "Foremen", count: 25 },
-  { role: "Carpenter", count: 280 },
-  { role: "Rigger", count: 50 },
-  { role: "Fitter", count: 220 },
-  { role: "Unskilled", count: 300 },
+  {
+    role: "Engineers",
+    slug: "engineers",
+    count: 8,
+    imageUrl:
+      "https://imgs.search.brave.com/VKPkcRiHbeJXm1gjNqRIBp2nfN_7Np8DxO1Ad-9gHUk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9j/aXZpbC1lbmdpbmVl/ci1jb25zdHJ1Y3Rp/b24td29ya2VyLWFy/Y2hpdGVjdHMtd2Vh/cmluZy1oYXJkaGF0/cy1zYWZldHktdmVz/dHMtYXJlLXdvcmtp/bmctdG9nZXRoZXIt/Y29uc3RydWN0aW9u/LXNpdGUtYnVpbGRp/bmctaG9tZS1jb29w/ZXJhdGlvbi10ZWFt/d29yay1jb25jZXB0/XzY0MDIyMS0xNzIu/anBnP3NlbXQ9YWlz/X2h5YnJpZCZ3PTc0/MCZxPTgw",
+    description:
+      "Our engineers lead every project’s planning, design, and supervision — ensuring all structures meet safety and quality standards.",
+  },
+  {
+    role: "Formwork-Carpenter",
+    slug: "formwork-carpenter",
+    count: 300,
+    imageUrl:
+      "https://imgs.search.brave.com/itx2aWSOnBGYzTKGw5UfFt0_MpOdd4_89BhBk2yPVOU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jaGwt/bG1zLWJ1Y2tldC5z/My5ldS13ZXN0LTIu/YW1hem9uYXdzLmNv/bS9jb3Vyc2UtY29u/dGVudHMvMTcyODky/MzM3NS5wbmc",
+    description:
+      "Experts in constructing and assembling formwork systems that define concrete structures for precision builds.",
+  },
+  {
+    role: "Foremen",
+    slug: "foremen",
+    count: 25,
+    imageUrl:
+      "https://imgs.search.brave.com/Kx-3bmbBI1DL3RGyj0OdbD_IB30cQNQRPHeNR8Bgsk0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20veW9icm8xMC95/b2JybzEwMTIwNy95/b2JybzEwMTIwNzAw/MDEwLzE0MjY0MzQz/LWNvbnN0cnVjdGlv/bi1mb3JlbWFuLW9u/LXRoZS1qb2Itc2l0/ZS5qcGc_dmVyPTY",
+    description:
+      "Foremen coordinate site activities, manage teams, and ensure smooth day-to-day construction progress.",
+  },
+  {
+    role: "Carpenter",
+    slug: "carpenter",
+    count: 280,
+    imageUrl:
+      "https://imgs.search.brave.com/Sav4Hg89NRQR_ZjZrKzipBnLkt7h4wgiQv9q45V9AJI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjE5/MzM4MTkyL3ZpZGVv/L2NhcnBlbnRlci13/b3JraW5nLmpwZz9z/PTY0MHg2NDAmaz0y/MCZjPUJ1eDExb1dz/RGVLZFg5X0NMU0JI/R1NVVGtEN3B5Vlh2/R3djeU5OdDhkV2c9",
+    description:
+      "Carpenters create and install molds, fittings, and frameworks essential to concrete structure formation.",
+  },
+  {
+    role: "Rigger",
+    slug: "rigger",
+    count: 50,
+    imageUrl:
+      "https://imgs.search.brave.com/un7_aefRaek1Syt-yVYpTgTzup0VvneOj6kKPT4YqMw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tb3hp/ZXRyYWluaW5nLmNv/bS9jZG4vc2hvcC9w/cm9kdWN0cy9SaWdn/aW5nX1NhZmV0eV9p/bl9Db25zdHJ1Y3Rp/b25fRW52aXJvbm1l/bnRzXzU4MHguanBn/P3Y9MTU3Njc3NTgy/NQ",
+    description:
+      "Riggers operate cranes, hoists, and lifting systems — safely handling heavy materials across heights.",
+  },
+  {
+    role: "Fitter",
+    slug: "fitter",
+    count: 220,
+    imageUrl:
+      "https://imgs.search.brave.com/WJ4dVv0XnfOw6UDiVPT3G_1E-5VkH1c63aiENOlAQ-8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTY2/MzI4MTExL3Bob3Rv/L21ldGFsLXdvcmtl/ci5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9Mzh5UmlsN2NE/WEhlYU5lNjlob1pD/YmEyRFdrbFFBSHN6/UjFtdkpwby1jRT0",
+    description:
+      "Fitters assemble and maintain structural steel and reinforcement systems ensuring project strength and reliability.",
+  },
+  {
+    role: "Unskilled",
+    slug: "unskilled",
+    count: 300,
+    imageUrl: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=400&auto=format&fit=crop",
+    description:
+      "Unskilled labor supports skilled teams across all aspects of construction — the unsung backbone of every project.",
+  },
 ];
+
+// Lightweight Equipment
+export const lightEquipment = [
+  {
+    name: "Cutting Bending Machine",
+    description:
+      "Used to cut and bend steel bars precisely, ensuring structural strength in construction.",
+    image:
+      "https://imgs.search.brave.com/tKXOIUBSQXP6fL4PmcayQecVVRQTPIDEfaKQRuM7Rhk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zbWl0/LWNvcnAuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIzLzAy/L0hvdy10by1jaG9v/c2UtdGhlLXJpZ2h0/LWJhci1iZW5kaW5n/LW1hY2hpbmUtZm9y/LXlvdXItY29uc3Ry/dWN0aW9uLW5lZWRz/LTc3MHg0MjAuanBn",
+  },
+  {
+    name: "Ply Cutting Machine",
+    description:
+      "Specialized for cutting plywood sheets cleanly and efficiently for formwork.",
+    image:
+      "https://imgs.search.brave.com/hps4heLDHGqQCOKz1HO_LI7s5xfkqNG0WDWV6aNRdkE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jcGlt/Zy50aXN0YXRpYy5j/b20vMDE4NTMyMjEv/Yi80LzItUGx5LUN1/dHRpbmctTWFjaGlu/ZS5qcGc",
+  },
+  {
+    name: "Drill Machine",
+    description:
+      "Handheld machine used for drilling holes into walls, wood, or concrete.",
+    image:
+      "https://imgs.search.brave.com/94wXf6iob1qYxWyRBrY55h5B1IND08EsomEu_1OwJoA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzEwLzA4LzM5LzAx/LzM2MF9GXzEwMDgz/OTAxMzZfVnZWcTQ2/MkpYblQ5TU1mNkhE/UlZBT3lIT3dqS1lr/WDAuanBn",
+  },
+  {
+    name: "Chipping Machine",
+    description:
+      "Removes hardened concrete layers, plaster, or tiles during finishing work.",
+    image:
+      "https://imgs.search.brave.com/VygGMOYStcT9yZcIP0mMMreviX46I05ataxiI8BATjU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aWlt/Zy50aXN0YXRpYy5j/b20vZnAvMS8wMDMv/MDM5L2F1dG9tYXRp/Yy13b29kLWNoaXBw/aW5nLW1hY2hpbmVz/LTI0Ni5qcGc",
+  },
+  {
+    name: "Grinder",
+    description:
+      "A power tool for grinding, cutting, and polishing metal, stone, or other hard materials.",
+    image:
+      "https://imgs.search.brave.com/Pbdiu4jPHrSIaDKhdYACiMjOI5XJrf7s_N7qn9Ke7DU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kaXN0/YXIudG9vbHMvdXBs/b2Fkcy9hcnRpY2xl/cy8wMS84NS93Mzgy/X2VzYjM3OThqY181/NzY1MGM2YS5qcGc",
+  },
+  {
+    name: "Safety Helmet",
+    description:
+      "Protective headgear to safeguard against head injuries from falling objects and impacts.",
+    image:
+      "https://imgs.search.brave.com/dWRK53m_B0BqfqbdWv4ZirjMU2xDZREjBLGvcvcP3BY/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly81Lmlt/aW1nLmNvbS9kYXRh/NS9TRUxMRVIvRGVm/YXVsdC8yMDI1Lzcv/NTMyMDI1NDIyL1JH/L0lJL0ZMLzE5MjU1/MTcvc2FmZXR5LWNv/bnN0cnVjdGlvbi1o/ZWxtZXQtMjUweDI1/MC5qcGc",
+  },
+  {
+    name: "Safety Jacket",
+    description:
+      "High-visibility jacket designed to ensure safety in hazardous work environments.",
+    image:
+      "https://imgs.search.brave.com/6Kz6toMuk2L5NUH7B3t1JocsFXlYC6qGl3uDlHZLC3w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9nbG9i/YWxjb25zdHJ1Y3Rp/b25zdXBwbHkubmV0/L2Nkbi9zaG9wL3By/b2R1Y3RzL1NKMTEw/Qi0zWkdTX0Zyb250/XzUxMng1MTIuanBn/P3Y9MTUzMzI1Mjcx/NQ",
+  },
+  {
+    name: "Safety Glasses",
+    description:
+      "Protective glasses that shield the eyes from dust, debris, and harmful particles.",
+    image:
+      "https://imgs.search.brave.com/mcPUwKd0yMj02TNz5Z0L11spXKW1PEMP8GzZonv6b2g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yeHNh/ZmV0eWNhbmFkYS5j/b20vbWVkaWEvY2F0/YWxvZy9wcm9kdWN0/L2NhY2hlL2M0ZDIy/YjgyMzA1OTkzYmNl/YTJjNmU1MzQ1M2Mx/NGExL18vZC9fZHNj/NTMyNC5qcGc",
+  },
+  {
+    name: "Safety Earmuffs",
+    description:
+      "Noise-reduction earmuffs designed to protect against loud industrial sounds.",
+    image:
+      "https://imgs.search.brave.com/mbdr81ItDoBowSCuDJzkkCYgfGZfzYlIq66pM6fGPlw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tdWx0/aW1lZGlhLjNtLmNv/bS9td3MvbWVkaWEv/ODM0MDk3Si8zbS1w/ZWx0b3Itb3B0aW1l/LTk1LWVhcm11ZmZz/LWg2YS12LWZyb250/c2lkZS5qcGc",
+  },
+];
+
+// Heavy Equipment
+export const heavyEquipment = [
+  {
+    name: "Tower Crane",
+    description:
+      "Used for lifting and moving heavy materials like concrete and steel to great heights.",
+    image:
+      "https://imgs.search.brave.com/3sYcgvzu8Pn2yj63dm3t4Sc-mtA3dA1bMf3qEQxfsj4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/eW91dHViZS5jb20v/dmkvX1FMdEE1cF9z/WU0vaHFkZWZhdWx0/LmpwZw",
+  },
+  {
+    name: "Concrete Mixer Truck",
+    description:
+      "Mixes and delivers concrete efficiently to construction sites ensuring uniform consistency.",
+    image:
+      "https://imgs.search.brave.com/_mSLHtOFp-mr1ly9jdyPPpyUllp3Edu4tXYNdGzUUTE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzI5LzM2LzYy/LzM2MF9GXzUyOTM2/NjIxMV9hQWRyR0gx/OGZNbDA3YjlVblBN/SUk4b1JrMVdpakFW/bC5qcGc",
+  },
+  {
+    name: "Excavator",
+    description:
+      "Multi-purpose machine used for digging, lifting, and demolition work.",
+    image:
+      "https://imgs.search.brave.com/ktptkDgTbrsuPOyi61wnHYgph6UicZSzAyzWuqmQ5ro/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzI1Lzk0Lzkw/LzM2MF9GXzI1OTQ5/MDY3XzdMVUpkWUla/dG4ydGlxdlgzRVky/ajJpbW80TjhuM2ps/LmpwZw",
+  },
+  {
+    name: "Transit Mixer",
+    description:
+      "Transports ready-mix concrete from batching plants to construction sites.",
+    image:
+      "https://imgs.search.brave.com/EqPiUtj-d9geUIa6wnQSsT0ckXxG8fZ7sp9bwLO360U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jcGlt/Zy50aXN0YXRpYy5j/b20vMDAyMjg3MTcv/Yi80L1RyYW5zaXQt/TWl4ZXIuanBn",
+  },
+  {
+    name: "JCB Backhoe Loader",
+    description:
+      "Versatile machine used for digging, loading, and material handling operations.",
+    image:
+      "https://imgs.search.brave.com/dTnnGCqSYve5lai_LV8zXQfumwxXzyJW04DI7E7awbQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudHJhY3Rvcmp1/bmN0aW9uLmNvbS9J/bmZyYWp1bmN0aW9u/LXByb2QvamNiXzJk/eF9iYWNraG9lX2xv/YWRlcjE2ODY4MDg4/NDdfNTVkNjFkNWI0/My5qcGc_Zm9ybWF0/PXdlYnAmcXVhbGl0/eT00MA",
+  },
+  {
+    name: "Concrete Pump",
+    description:
+      "Transfers liquid concrete by pumping — ideal for high-rise building work.",
+    image:
+      "https://imgs.search.brave.com/sWmOBtA_LP1aJe_Oe9-jSv35gEBN4HYQv0QLLXs0PGk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcz/LmV4cG9ydGVyc2lu/ZGlhLmNvbS9wcm9k/dWN0X2ltYWdlcy9i/Yy1zbWFsbC8yMDIz/LzExLzQ3NjQ0MTgv/Y29uY3JldGUtYm9v/bS1wdW1wLTE2Njk2/MjczMTItNjY0NTgy/OC5qcGc",
+  },
+  {
+    name: "Scaffolding System",
+    description:
+      "Temporary structure used to support work crews and materials during construction.",
+    image:
+      "https://imgs.search.brave.com/yeQSuGt9whzcmJcyEEem4JIYctL-4UsJIY6va-hDdBw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjIx/NzE0NDE0Ni9waG90/by9jb21wb3NpdGlv/bi1vZi1zY2FmZm9s/ZGluZy1hZ2FpbnN0/LWEtY2xvdWR5LXNr/eS1hdC1hLWxhcmdl/LWNvbnN0cnVjdGlv/bi1zaXRlLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1WcGoz/WHBST0lMaDZ6Ykxk/UjhLVTdpSE91bFEt/ZnFJSHU0SEQyN3VM/X0x3PQ",
+  },
+  {
+    name: "Vibratory Roller",
+    description:
+      "Used for compacting soil, asphalt, and other materials to create a stable foundation.",
+    image:
+      "https://imgs.search.brave.com/j72d9-wVQ3LYbT37lhGY1Y4IKiCdaCLyykW7co78ZJM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWFjaGluZXNsLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8wOS9zbW9vdGgt/ZHJ1bS12aWJyYXRv/cnktcm9sbGVyLmpw/Zw",
+  },
+  {
+    name: "Dump Trucks",
+    description:
+      "Vehicles designed to carry and unload loose materials such as sand, gravel, and demolition debris.",
+    image:
+      "https://imgs.search.brave.com/RHmqL0PISFp5xgBV0UiUxJhN2GV4GQebOrVlBMN0wnI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvOTM2/NDE4ODE0L3Bob3Rv/L2xhcmdlLW1pbmlu/Zy1yb2NrLWR1bXAt/dHJ1Y2tzLXRyYW5z/cG9ydGluZy1wbGF0/aW51bS1vcmUtZm9y/LXByb2Nlc3Npbmcu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUJiNEhJRGwyUXU2/Y3U2MTJDYS1jdGdO/OFNFUDV3QjE2RGhI/d2NHOUhBSW89",
+  },
+];
+
 
 export const turnover = [
   { year: "2020-21", amount: 28692141 },
