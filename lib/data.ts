@@ -7,6 +7,45 @@ export const company = {
   email: "sai.infragroup786@gmail.com",
 };
 
+export type ClientLogo = {
+  url: string;
+  alt: string;
+};
+
+export const publicClients: ClientLogo[] = [
+  { url: "https://capacite.in/wp-content/uploads/2024/06/client-logo-2.jpg", alt: "MHADA" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/03.jpg", alt: "CIDCO" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/10.jpg", alt: "BSNL" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/client-logo-1.jpg", alt: "NBCC" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/pwd.jpg", alt: "PWD" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/bmc.jpg", alt: "BMC" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/08.jpg", alt: "Rail Vikas Nigam" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/06.jpg", alt: "IOCL" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/07.jpg", alt: "GIFT City" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/1.jpg", alt: "ICT" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/jnpa.jpg", alt: "JNPA" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/client-logo-1.jpg", alt: "MMRDA" },
+  { url: "https://capacite.in/wp-content/uploads/2025/05/08.jpg", alt: "NHSRCL" },
+];
+
+export const privateClients: ClientLogo[] = [
+  { url: "https://capacite.in/wp-content/uploads/2025/09/Hinduja-Group-Logo.png", alt: "Hinduja" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/12.jpg", alt: "Oberoi" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/17.jpg", alt: "Raymond" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/11.jpg", alt: "Hiranandani" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/BRIGADE-GROUP17.png", alt: "Brigade" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/signature.jpg", alt: "Piramal" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/TATA-TRUST.png", alt: "Tata Trust" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/shefi.jpg", alt: "Transcon" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/16.jpg", alt: "Rustomjee" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/13.jpg", alt: "Brookfield" },
+  { url: "https://capacite.in/wp-content/uploads/2025/04/kalpataru.jpg", alt: "Kalpataru" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/BROOKFIELD-1.png", alt: "Emaar MGF" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/GIC-SINGAPORE.png", alt: "Wadhwa" },
+  { url: "https://capacite.in/wp-content/uploads/2024/06/15.jpg", alt: "Saifee Burhani Trust" },
+];
+
+
 export const projects = [
   // {
   //   name: "ABIL – Mansion",
